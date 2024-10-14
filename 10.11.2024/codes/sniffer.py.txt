@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+from scapy.all import *
+
+def print_pkt(pkt):
+    pkt.show()
+
+# Update interface name as per your Docker setup
+pkt = sniff(iface='br-d937039f0471', filter='icmp', prn=print_pkt)
