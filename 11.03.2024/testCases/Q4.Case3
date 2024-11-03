@@ -1,0 +1,3 @@
+Car_id,Date,Customer Name,Gender,Annual Income,Dealer_Name,Company,Model,Transmission,Color,Price ($),Dealer_No ,Body Style,Phone,Dealer_Region
+C_CND_000005,5/12/2022,Alice,Female,45000,Dealer_E,Toyota,Highlander,Auto,Gray,32000,53546-9427,SUV,7081483,Janesville
+C_CND_000006,6/7/2022,Bob,Male,60000,Dealer_F,Nissan,Altima,Manual,Red,27000,85257-3102,Sedan,7315216,Scottsdale

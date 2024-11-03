@@ -1,0 +1,217 @@
+Homework 3: Python Programming
+
+Due: Thursday Oct 31st, 2024 at 11.59 pm
+
+Conditions of Programming.
+
+1. Python Library Functions allowed: 
+
+--len(), print(), list(), str(), input(), int(), type(), chr(), ord(), and range(). 
+--Inbuilt modules and functions: random and math allowed. 
+--All in-built functions related to strings (isdigit, isalpha, endswith, contains, slicing etc) and lists (slicing, append(), remove(), in, index(), list comprehensions) allowed. 
+
+2. All file operations are allowed: open/read/readline/write/writelines/with etc. 
+
+Not Allowed.
+
+3. Try/except exception handling not allowed. Will receive zero marks for any program using try/except at any point in the program regardless of the merit of the program. You will have to write your own code to handle such scenarios.
+
+--One exception: You may use try/except when trying to open files to handle invalid file names or paths.
+
+4. "with" method of processing files is not allowed.
+
+5. Using "in" operator for checking presence of character/value in a set of characters/values is not allowed. This must be done from first principles.
+
+
+
+Grading notes: 
+
+0. Code must execute on the test cases (see below) without fail.
+1. Error checking is required. 
+2. Well commented programs. 
+3. Input validation.  
+
+(IMPORTANT) Submissions format, deliverables and additional conditions:
+
+1. Upload the individual python files by naming them with the question numbers. ZIP files or any other format will be given automatic zero.
+
+1.a Python scripts should be named: P1.py, P2.py etc as per the question number
+
+1.b [OPTIONAL] Custom Python modules and scripts. As you have written some code for previous homework, you may upload those files or modules (Python scripts) into BB along with your submission with their original module or file names as you may have utilized them for your current homework. E.g., if you used float_check function from a module called inputcheck.py then just upload inputcheck.py along with your required files.
+
+1.c Do NOT upload modules that are not written as part of any previous homework. The code should not be different from whatever you have submitted earlier. 
+Each module should have preamble description in comments containing the following information at the very least. 
+
+#########################################################################
+# 1. Name of module: 
+# 2. Homework number (for which it was developed): 
+# 3. Question number (for which it was developed):
+#########################################################################
+
+2. For questions that are required to read data from a file, please submit 3 test cases (test data files), which can be used to check your code. If your code fails to execute on the test cases, you will not receive any marks. For grading purposes, your code may be run on other students' test cases as well. Therefore, follow the format of the test cases as shown in the questions.
+
+2.a Test case files should be named: Q1.Case1, Q1.Case2, Q1.Case3 (if these cases are for Question 1).  Follow consistency in naming with proper case (as shown P1 is capital P, Q1 is capital Q etc, Case1 is capital C etc.) and numbering. We will rename these files appropriately when testing against your code.
+
+Additional conditions. All the following conditions must be satisfied for your assignment to be graded.
+
+3. Please DO NOT copy the questions into your submissions. 
+
+4. Do NOT provide sample input/output.
+
+5. Do not change the program specifications. For example, asking user to input file names or asking input from user for some other purpose when the program does not specify this. Develop the program as per the problem statement.
+
+6. Do NOT copy Python code into BlackBoard. All such submissions will receive automatic zero and will not be graded.
+
+
+Problems
+
+Q1. A file mixeddata.txt is provided (this file name can be hard coded into your program. Do not write an input statement telling the user to enter the file name). 
+The file contains different types of data: integer values, floating point values, alphabetic, alphanumeric (strings that are combination of alphabets and numbers), strings containing special characters like $*# etc with numbers/alphabets, and strings containing only special characters. Each data item is in a different line. Create a separate list for each data type and print out the lists to the screen. It would be preferable to use the input validation functions you have developed in your previous homework or you can use a combination of the in-built string functions to achieve this. 
+
+E.g, If mixeddata.txt contains
+
+99
+abc
+11
+ccdda
+aa99
+bb
+78.1
+a173
+a&&*
+89.33
+aa.bb
+88&&
+###*(
+(())##
+
+
+Output should display:
+
+List of integers;         [99, 11]
+List of strings:          [abc, ccdda, bb, aa.bb]
+List of floating points:  [78.1, 89.33]
+List of alphanums:    [aa99, a173]
+List of specialalphanums: [a&&*, 88&&]
+List of specials: [###*(, (())##]
+
+Q2.  Create a file called employeedb.txt. The program should ask the user for the number of records to be inserted. Each record should contain the following fields: <Name, Age, EmployeeID, Years of Service>. The user should now proceed to enter the record data one field value at a time. 
+
+Note that, input validation is required. For instance, if the user enters an invalid value for the age field (alphanumeric, floating point, or negative values or special characters), the program should prompt the user to input a valid age value. The same applies to "Years of Service". 40 years is maximum service period. If user enters floating point, then it should be considered as years.months. E.g. 8.2 means, 8 years and 2 months. Maximum month value is 11. The EmployeeID can be something like ABC222 (alphanumeric).  
+
+Once all field values are provided, the program should write a valid record into the employeedb.txt file. Once the total number of records is processed the program should quit (no need for any status display).
+
+E.g., Sample record entry scenario
+
+
+(Display) Number of records to enter: 2
+(Display) Entering Record 1
+
+(Input Prompt) Enter Name: Hello
+(Input Prompt) Enter Age: 33
+(Input Prompt) Enter EmployeedID: ABC123
+(Input Prompt) Enter Years of Service: 2
+
+(Display) Record  1 Entry successful
+
+Entering Record 2
+
+(Input Prompt) Enter Name: World
+(Input Prompt) Enter Age: 990
+(Display Error) Invalid Age
+(Input Prompt) Enter Age: 39
+(Input Prompt) Enter EmployeedID: ABC124
+(Input Prompt) Enter Years of Service: 5
+
+(Display) Record  2 Entry successful
+
+
+employeedb.txt
+
+Serial Number 	Name of Employee (First Last)	Age	EmployeeID	Years of Service
+--------------------------------------------------------------------------------
+1		Sam Spade			33	ABC123		2
+2		Hal Borland			39 	ABC124		5
+
+
+
+Q3. The Python String split() function works as follows (Ref. https://www.w3schools.com/python/ref_string_split.asp):
+
+L=list()
+
+testString = "welcome to the jungle"
+
+L = testString.split(" ") [If used without an argument, i.e., testString.split(),  all spaces before and after the string are removed.]
+
+print(L)
+
+Output: ["welcome", "to", "the", "jungle"]
+
+How does split() work? It takes the input string "testString" and returns all sub-strings separated with the separator provided, in this case: " " (space), as a list. This list can now be processed as a regular list.
+
+Now, you are given a file data.txt that contains a sequence of records that are of the following format:
+
+Serial Number 	Name of Employee (First, Last)	DOB (MM/DD/YYYY)	EmployeeID  Rate/Hour		
+-----------------------------------------------------------------------------------------------------------------	
+1		John Smith			12/01/1977		ABC123		3.25		
+2		Jill Harper			03/23/1984 		ABC124		5.25		
+3		Tim Taylor 			05/05/1993		ABC224  	9.75		
+4  		Sara Miller			07/08/1993		ABC234		8.75			
+
+(Note: The data spacing maybe different from what is shown.)
+
+Open this file for reading. Create individual lists for the different fields: Name of Employee, Date of Birth, EmployeeID, Years of Service. The data should be converted to appropriate format before storing in the appropriate list. Display the individual lists to the screen.
+
+Now, calculate the average age of the number of employees in the file, the maximum rate/hour, the minimum rate/hour, the average rate/hour and DoB of youngest employee (counted until 10/20/2024),  across all the employees (do  not print or display to the screen). Create a new file called datastats.txt. Write this statistical information into the file appropriately.
+
+E.g. datastats.txt (contents) (sample values shown)
+
+Statistic							Value 
+--------------------------------------------------------------------------
+Average age of employees (year-to-year: e.g., 1983 to 2024) Years:  		37.5
+Maximum pay rate among all employees: 			   			9.75
+Lowest pay rate among  all employees: 			   			3.25
+Average pay rate of employees: 				   			6.75
+DoB of youngest employee: 				   			07/08/1993
+
+
+
+------------------------Next problem set requires simple data analysis on real-world data sets-----------------------------------------------------------------
+
+IMPORTANT: For the questions below, you are to process each record by reading it ONLY once. Either readline or "with" commands are allowed.
+You cannot use the file read() command for any of the questions below.
+
+Each of the following questions has an attached data set and the description of the columns. The data is comma delimited (comma separated values CSV).
+You are asked to execute a predicate --a query, on each data set. You are to read each data record exactly ONCE and provide the answer to the query.
+
+Q4. Data set 1: Car sales data. This data set contains information about car sales in a given period of time (as recent as available). You are to write a Python
+program that will read this file and analyses the buying patterns of cars as time passes. We would like to know the number of manual/automatic cars sold each month and in each year (if there are multiple years).  The "month" should be displayed in words "January, February,..".
+
+Sample output:
+
+Month/Year   #of Manual Cars Sold   #of Automatic Cars Sold
+----------------------------------------------------------- 
+January/2022	    aaa			bbb		
+February/2022       ccc	 		ddd
+
+...
+
+
+
+Q5. Data set 2: Walmart sales data. This data contains sales data (number of sales) at different Walmart stores across the nation on consecutive weeks. The data contains temperatures of the respective weeks as well. We would like to know the average number of sales when the outside temperatures show variation. For example, when the temperature is in the range of 40-50 F what is the average number of sales? Write a Python script that achieves this. The output of this script should show the average sales for each of the following temperature ranges. (Sample shown).
+40-50, 51-60, 61-70, and 71-80.
+
+Temperature Range         Average Sales
+----------------------------------------
+40-50			.....
+51-60			.....
+
+
+
+
+
+
+
+
+
+

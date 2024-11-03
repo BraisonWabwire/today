@@ -1,0 +1,11 @@
+Car Sales Data
+
+Car_ID: Unique identifier for each car in the dataset.
+Date: Date of the car sale transaction. (format MM/DD/YYYY)
+Customer Name: Name of the customer purchasing the car.
+Gender: Gender of the customer (e.g., Male, Female).
+Annual Income: Annual income of the customer.
+Dealer_Name: Name of the car dealer associated with the sale.
+Company: Company or brand of the car.
+Model: Model name of the car.
+Transmission: Type of transmission in the car (e.g., Automatic, Manual).

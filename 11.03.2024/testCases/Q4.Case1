@@ -1,0 +1,3 @@
+Car_id,Date,Customer Name,Gender,Annual Income,Dealer_Name,Company,Model,Transmission,Color,Price ($),Dealer_No ,Body Style,Phone,Dealer_Region
+C_CND_000001,1/2/2022,Geraldine,Male,13500,Dealer_A,Ford,Expedition,Auto,Black,26000,06457-3834,SUV,8264678,Middletown
+C_CND_000002,2/5/2022,Gia,Female,15000,Dealer_B,Toyota,Corolla,Manual,Red,20000,60504-7114,Sedan,6848189,Aurora
