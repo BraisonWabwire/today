@@ -1,7 +1,5 @@
-from collections import defaultdict
-
 # Dictionary to store sales data by temperature ranges
-sales_by_temp_range = defaultdict(list)
+sales_by_temp_range = {}
 
 # Function to determine the temperature range
 def get_temp_range(temp):
@@ -15,25 +13,32 @@ def get_temp_range(temp):
         return "71-80"
     return None  # Ignore temperatures outside of these ranges
 
-# Read data from the dataset file
-with open("Data2-Walmart_sales.csv", "r") as file:
-    # Skip the header line
-    file.readline()
+# Open the file and read data from the dataset file
+file = open("Data2-Walmart_sales.csv", "r")
+# file = open("Q5.Case3", "r")
+# Skip the header line
+file.readline()
+
+# Processing of each line in the dataset
+for line in file:
+    parts = line.strip().split(',')
     
-    # Processing of each line in the dataset
-    for line in file:
-        parts = line.strip().split(',')
-        
-        # Extract the Temperature and Weekly Sales
-        temperature = float(parts[4])        # Temperature is the 5th column (1-indexed)
-        weekly_sales = float(parts[2])       # Weekly_Sales is the 3rd column
-        
-        # Determine the temperature range
-        temp_range = get_temp_range(temperature)
-        
-        # If the temperature falls within our desired ranges, add the sales data
-        if temp_range:
-            sales_by_temp_range[temp_range].append(weekly_sales)
+    # Extract the Temperature and Weekly Sales
+    temperature = float(parts[4])        # Temperature is the 5th column (1-indexed)
+    weekly_sales = float(parts[2])       # Weekly_Sales is the 3rd column
+    
+    # Determine the temperature range
+    temp_range = get_temp_range(temperature)
+    
+    # If the temperature falls within our desired ranges, add the sales data
+    if temp_range:
+        # Check if the key exists; if not, initialize it with an empty list
+        if temp_range not in sales_by_temp_range:
+            sales_by_temp_range[temp_range] = []
+        sales_by_temp_range[temp_range].append(weekly_sales)
+
+# Close the file
+file.close()
 
 # Calculate average sales for each temperature range
 print("Temperature Range\tAverage Sales")

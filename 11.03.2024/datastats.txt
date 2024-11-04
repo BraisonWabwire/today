@@ -1,7 +1,7 @@
 Statistic				Value
 --------------------------------------------------------------------------
-Average age of employees: 44.55 years
-Maximum pay rate: 12.25
-Lowest pay rate: 1.25
-Average pay rate: 6.79
-DoB of youngest employee: 10/26/1999
+Average age of employees: 36.50 years
+Maximum pay rate: 12.0
+Lowest pay rate: 9.25
+Average pay rate: 10.62
+DoB of youngest employee: 07/20/1992
